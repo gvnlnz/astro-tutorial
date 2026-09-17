@@ -13,11 +13,33 @@ const skills = ["Laravel", "Astro", "React", "Python", "C"];
 const happy = true;
 const finished = false;
 const goal = 3;
+
+// CSS variable
+const skillColor = "red";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
 
 <html>
 	<head>
 		<title>{pageTitle}</title>
+		<style define:vars = {{skillColor, fontWeight, textCase}}>
+			h1 {
+				color: purple;
+				font-size: 4rem;
+			}
+
+			.skill {
+				color: var(--skillColor);
+				font-weight: var(--fontWeight);
+				text-transform: var(--textCase);
+			}
+
+			.hobby {
+				color: orange;
+				font-weight: var(--fontWeight);
+			}
+		</style>
 	</head>
 
 	<body>
@@ -32,12 +54,12 @@ const goal = 3;
 			<li>I work as {identity.job}</li>
 			{identity.hobbies.length > 0 &&
 				<li>My hobbies are: {
-					identity.hobbies.map((hobby) => <li>{hobby}</li>)}
+					identity.hobbies.map((hobby) => <li class="hobby">{hobby}</li>)}
 				</li>
 			}
 			<br />
 			<li>My main programming languages are:</li>
-			{skills.map((skill) => <li>{skill}</li>)}
+			{skills.map((skill) => <li class="skill">{skill}</li>)}
 
 			{happy && <p>I'm happy to learn Astro!</p>}
 			{finished && <p>Ho finito il tutorial</p>}
