@@ -9,6 +9,10 @@ const identity = {
 };
 
 const skills = ["Laravel", "Astro", "React", "Python", "C"];
+
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 
 <html>
@@ -31,6 +35,14 @@ const skills = ["Laravel", "Astro", "React", "Python", "C"];
 					identity.hobbies.map((hobby) => <li>{hobby}</li>)}
 				</li>
 			}
+			<br />
+			<li>My main programming languages are:</li>
+			{skills.map((skill) => <li>{skill}</li>)}
+
+			{happy && <p>I'm happy to learn Astro!</p>}
+			{finished && <p>Ho finito il tutorial</p>}
+			{goal == 3 ? <p>My goal is to close in 3 days.</p> : <p>My goal is to close in 3 days.</p>}
+			
 		</ul>
 	</body>
 </html>
