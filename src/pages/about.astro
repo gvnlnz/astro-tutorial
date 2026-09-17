@@ -1,12 +1,36 @@
+---
+const pageTitle = "About me";
+
+const identity = {
+	fName: "Gavio",
+	country: "Italy",
+	job: "Developer",
+	hobbies: ["hobby 1", "hobby 2", "hobby 3"],
+};
+
+const skills = ["Laravel", "Astro", "React", "Python", "C"];
+---
+
 <html>
 	<head>
-		<title>About Page</title>
+		<title>{pageTitle}</title>
 	</head>
 
 	<body>
 		<a href="/">Home</a>
 		<a href="/about">About</a>
-		<h1>About Page</h1>
-		<p>some infos about me</p>
+		<h1>{pageTitle}</h1>
+
+		<p>Here are some info's about me:</p>
+		<ul>
+			<li>My name is {identity.fName}</li>
+			<li>I live in {identity.country}</li>
+			<li>I work as {identity.job}</li>
+			{identity.hobbies.length > 0 &&
+				<li>My hobbies are: {
+					identity.hobbies.map((hobby) => <li>{hobby}</li>)}
+				</li>
+			}
+		</ul>
 	</body>
 </html>
