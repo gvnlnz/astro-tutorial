@@ -1,4 +1,6 @@
 ---
+import "../styles/global.css";
+
 const pageTitle = "About me";
 
 const identity = {
@@ -23,7 +25,7 @@ const textCase = "uppercase";
 <html>
 	<head>
 		<title>{pageTitle}</title>
-		<style define:vars = {{skillColor, fontWeight, textCase}}>
+		<style define:vars={{ skillColor, fontWeight, textCase }}>
 			h1 {
 				color: purple;
 				font-size: 4rem;
@@ -52,19 +54,27 @@ const textCase = "uppercase";
 			<li>My name is {identity.fName}</li>
 			<li>I live in {identity.country}</li>
 			<li>I work as {identity.job}</li>
-			{identity.hobbies.length > 0 &&
-				<li>My hobbies are: {
-					identity.hobbies.map((hobby) => <li class="hobby">{hobby}</li>)}
+			{identity.hobbies.length > 0 && (
+				<li>
+					My hobbies are:{" "}
+					{identity.hobbies.map((hobby) => (
+						<li class="hobby">{hobby}</li>
+					))}
 				</li>
-			}
+			)}
 			<br />
 			<li>My main programming languages are:</li>
-			{skills.map((skill) => <li class="skill">{skill}</li>)}
+			{skills.map((skill) => (
+				<li class="skill">{skill}</li>
+			))}
 
 			{happy && <p>I'm happy to learn Astro!</p>}
 			{finished && <p>Ho finito il tutorial</p>}
-			{goal == 3 ? <p>My goal is to close in 3 days.</p> : <p>My goal is to close in 3 days.</p>}
-			
+			{goal == 3 ? (
+				<p>My goal is to close in 3 days.</p>
+			) : (
+				<p>My goal is to close in 3 days.</p>
+			)}
 		</ul>
 	</body>
 </html>
