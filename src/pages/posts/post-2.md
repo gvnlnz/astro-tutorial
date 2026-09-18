@@ -9,4 +9,12 @@ image:
     alt: "Il logo di Astro su uno sfondo scuro con un arco sfumato viola."
 tags: ["astro", "blogging", "imparare in pubblico", "successi"]
 ---
-Dopo una prima settimana di successo imparando Astro, ho deciso di provarne un po' di più. Ho scritto e importato un piccolo componente a memoria!
+Di seguito è possibile vedere come creare una rotta Laravel per mostrare una lista di tutti gli utenti:
+
+```php
+<?php
+use App\Http\Controller\UserController;
+use Illuminate\Support\Facades\Route;
+
+Route::get('/users', [UserController::class, 'index'])->name('users.index');
+```
